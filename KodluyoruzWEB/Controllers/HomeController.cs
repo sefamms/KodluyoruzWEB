@@ -27,6 +27,19 @@ namespace KodluyoruzWEB.Controllers
         }
 
       
+        public IActionResult Login(Login p)
+        {
+            if (ModelState.IsValid)
+            {
+                if (p.Username == "deneme" && p.Password=="123")
+                {
+
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return View(p);
+        }
 
     }
 }
