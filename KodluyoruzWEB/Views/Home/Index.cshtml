@@ -1,8 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to @ViewBag.current</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+
+@model int
+<section class="content">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+
+            @for (int i = 0; i < 4; i++)
+            {
+<div class="col-lg-3 col-6">
+    <!-- small box -->
+    <div class="small-box @TempData["class_"+@i.ToString()]">
+        <div class="inner">
+            <h3>@i</h3>
+
+            <p>New Orders</p>
+        </div>
+        <div class="icon">
+            <i class="ion ion-bag"></i>
+        </div>
+        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+</div>}
+
+        </div>
+    </div><!-- /.container-fluid -->
+</section>

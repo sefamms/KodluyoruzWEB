@@ -21,14 +21,23 @@ namespace KodluyoruzWEB.Controllers
 
         public IActionResult Index()
         {
+            TempData["class_1"] = "bg-success";
+            TempData["class_2"] = "bg-danger";
+            TempData["class_3"] = "bg-warning";
+
             var current = Directory.GetCurrentDirectory();
             ViewBag.current = current;
-            return View("~/Views/Product/Index.cshtml");
+
+            return View();
+            //return View("~/Views/Product/Index.cshtml");
         }
 
-      
+        
+
         public IActionResult Login(Login p)
         {
+
+           
             if (ModelState.IsValid)
             {
                 if (p.Username == "deneme" && p.Password=="123")
