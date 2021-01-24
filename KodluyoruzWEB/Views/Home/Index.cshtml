@@ -1,31 +1,32 @@
 ﻿
 
 
+@section breadcrumb{
+    <nav aria-label="breadcrumb" class="my-5">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+            <li class="breadcrumb-item"><a href="#">Tümü</a></li>
+        </ol>
+    </nav>
+}
 
+<section class="header text-center my-5">
+    <div class="container">
+        <h1>Navbar example</h1>
+        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+        <a class="btn btn-lg btn-primary" href="#">Kitap Ara</a>
 
-@model int
-<section class="content">
-    <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-
-            @for (int i = 0; i < 4; i++)
-            {
-<div class="col-lg-3 col-6">
-    <!-- small box -->
-    <div class="small-box @TempData["class_"+@i.ToString()]">
-        <div class="inner">
-            <h3>@i</h3>
-
-            <p>New Orders</p>
-        </div>
-        <div class="icon">
-            <i class="ion ion-bag"></i>
-        </div>
-        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
     </div>
-</div>}
-
-        </div>
-    </div><!-- /.container-fluid -->
 </section>
+
+
+<div class="py-5 bg-light">
+    <div class="container">
+        <h3 class="text-center">TOP BOOKS</h3>
+
+       @await Component.InvokeAsync("TopBooks",new { count=3})
+        @*<vc:top-books count="5"></vc:top-books>*@
+
+    </div>
+</div>
+

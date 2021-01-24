@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BookModel>  
+@{
+    ViewData["Title"] = "GetAllBooks";
+    Layout = "~/Views/Shared/_Homelayout.cshtml";
+}
+
+<div class="container mt-5">
+    <h3 class="display-4">Tüm kitaplar</h3>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <partial name="_bookThumbnail" model="@book" />
+            </div>
+        }
+
+    </div>
+
+  
+    </div>
+
+
+
+

@@ -1,4 +1,8 @@
-﻿using KodluyoruzWEB.Models;
+﻿
+using KodluyoruzWEB.Models;
+using KodluyoruzWEB.Service;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,45 +14,47 @@ using System.Threading.Tasks;
 
 namespace KodluyoruzWEB.Controllers
 {
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IUserService _userService;
+        private readonly IEmailService _emailService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IUserService userService,IEmailService emailService)
         {
-            _logger = logger;
+            this._userService = userService;
+            this._emailService = emailService;
         }
 
+        [Route("~/")]
         public IActionResult Index()
         {
-            TempData["class_1"] = "bg-success";
-            TempData["class_2"] = "bg-danger";
-            TempData["class_3"] = "bg-warning";
+            //UserEmailOptions options = new UserEmailOptions
+            //{
+            //    toEmails=new List<string>() { "test@gmail.com"},
+            //    PlaceHolders=new List<KeyValuePair<string, string>>()
+            //    {
+            //        new KeyValuePair<string, string>("{{UserName}}","Nitish")
+            //    }
+            //};
+            //await _emailService.SendTestEmail(options);
 
-            var current = Directory.GetCurrentDirectory();
-            ViewBag.current = current;
+            //  var userId = _userService.GetUserId();
+            // var isLoggedIn = _userService.IsAuthenticated();
 
             return View();
-            //return View("~/Views/Product/Index.cshtml");
         }
 
-        
-
-        public IActionResult Login(Login p)
+        public IActionResult AboutUs()
         {
-
-           
-            if (ModelState.IsValid)
-            {
-                if (p.Username == "deneme" && p.Password=="123")
-                {
-
-                    return RedirectToAction("Index");
-                }
-            }
-
-            return View(p);
+            return View();
         }
 
+        [Authorize(Roles = "Admin,User")]
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+        
     }
 }
