@@ -1,0 +1,19 @@
+﻿@model BookModel
+<div class="card shadow-sm">
+        <div class="card-title">
+            @Model.title
+        </div>
+        <img src="@(string.IsNullOrEmpty(Model.coverImageUrl)?"/images/bookvector.png": Model.coverImageUrl)" class="img-fluid" />
+        <div class="card-body">
+            <h3 class="card-title">@(string.IsNullOrEmpty(Model.title)?"Geçersiz başlık":Model.title)</h3>
+            <p class="card-text">@(string.IsNullOrEmpty(Model.desciption)?"Geçersiz tanım":Model.desciption)</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a asp-route="bookdetailsroute" asp-route-id="@Model.id"
+
+                       class="btn btn-sm btn-outline-primary">Detay Sayfası</a>
+                </div>
+                <small class="text-muted">@(string.IsNullOrEmpty(Model.author)?"Geçersiz yazar":Model.author)</small>
+            </div>
+        </div>
+    </div>

@@ -5,18 +5,61 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210111145431_initial.cs" />
+    <Compile Remove="Migrations\20210111145431_initial.Designer.cs" />
+    <Compile Remove="Migrations\20210111145820_initial.cs" />
+    <Compile Remove="Migrations\20210111145820_initial.Designer.cs" />
+    <Compile Remove="Migrations\20210111145859_initial.cs" />
+    <Compile Remove="Migrations\20210111145859_initial.Designer.cs" />
+    <Compile Remove="Migrations\20210111161251_initial.cs" />
+    <Compile Remove="Migrations\20210111161251_initial.Designer.cs" />
+    <Compile Remove="Migrations\20210111182647_deneme.cs" />
+    <Compile Remove="Migrations\20210111182647_deneme.Designer.cs" />
+    <Compile Remove="Migrations\20210112064525_addedLanguageTable.cs" />
+    <Compile Remove="Migrations\20210112064525_addedLanguageTable.Designer.cs" />
+    <Compile Remove="Migrations\20210112064805_addedLanguageTable.cs" />
+    <Compile Remove="Migrations\20210112064805_addedLanguageTable.Designer.cs" />
+    <Compile Remove="Migrations\20210112064909_addedLanguageTable.cs" />
+    <Compile Remove="Migrations\20210112064909_addedLanguageTable.Designer.cs" />
+    <Compile Remove="Migrations\20210112065331_added.cs" />
+    <Compile Remove="Migrations\20210112065331_added.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\plugins\jquery\jquery.min.js">
+    <Content Update="wwwroot\Adminlte\plugins\jquery\jquery.min.js">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\plugins\jquery\jquery.min.map">
+    <Content Update="wwwroot\Adminlte\plugins\jquery\jquery.min.map">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Financial\Data\" />
+    <Folder Include="Areas\Financial\Models\" />
+    <Folder Include="wwwroot\books\cover\" />
+    <Folder Include="wwwroot\books\gallery\" />
+    <Folder Include="wwwroot\books\pdf\" />
   </ItemGroup>
 
 </Project>
